@@ -7,10 +7,10 @@ const Hero = () => {
     return (
         <Section id="home" className="flex items-start justify-center !pt-12 md:!pt-16 !pb-12">
             {/* Background Blobs */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-blue-400/30 rounded-full blur-[100px] animate-pulse" />
-                <div className="absolute top-[20%] left-[-10%] w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[100px] animate-pulse delay-700" />
-                <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-purple-400/30 rounded-full blur-[100px] animate-pulse delay-1000" />
+            <div className="absolute top-0 left-[-1%] w-full h-full overflow-hidden pointer-events-none">
+                <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-blue-400/30 rounded-full blur-[100px]" />
+                <div className="absolute top-[20%] left-[-10%] w-[400px] h-[400px] bg-blue-500/20 rounded-full blur-[100px]" />
+                <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-purple-400/30 rounded-full blur-[100px]" />
             </div>
 
             <div className="grid md:grid-cols-2 gap-12 items-center">
