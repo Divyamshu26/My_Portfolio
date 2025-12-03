@@ -13,7 +13,7 @@ const Hero = () => {
                 <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-purple-400/30 rounded-full blur-[100px]" />
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
                 {/* Text Content */}
                 <div className="space-y-6">
                     <motion.div
@@ -25,10 +25,10 @@ const Hero = () => {
                         <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-800 to-slate-600 mb-4 pb-2">
                             Giyyar Divyamshu Raghavendra
                         </h1>
-                        <h2 className="text-2xl md:text-3xl text-slate-600 font-medium mb-6">
+                        <h2 className="text-2xl md:text-3xl text-slate-800 md:text-slate-600 font-medium mb-6">
                             Software Developer | AI/ML | Backend
                         </h2>
-                        <p className="text-lg text-slate-500 leading-relaxed max-w-lg">
+                        <p className="text-lg text-slate-700 md:text-slate-500 leading-relaxed max-w-lg">
                             Final-year engineering student passionate about building real-world applications in AI, ML, backend systems, and scalable full-stack development.
                         </p>
                     </motion.div>
