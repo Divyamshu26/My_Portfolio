@@ -1,0 +1,33 @@
+﻿
+> my-portfolio@0.0.0 lint
+> eslint .
+
+
+C:\Users\divya\OneDrive\Desktop\Projects\Portfolio\src\components\About.jsx
+  3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\divya\OneDrive\Desktop\Projects\Portfolio\src\components\Achievements.jsx
+  3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  6:41  error  'Icon' is defined but never used                                               no-unused-vars
+
+C:\Users\divya\OneDrive\Desktop\Projects\Portfolio\src\components\Contact.jsx
+  3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\divya\OneDrive\Desktop\Projects\Portfolio\src\components\Hero.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\divya\OneDrive\Desktop\Projects\Portfolio\src\components\Navbar.jsx
+  3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\divya\OneDrive\Desktop\Projects\Portfolio\src\components\Projects.jsx
+  3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Users\divya\OneDrive\Desktop\Projects\Portfolio\src\components\Skills.jsx
+  3:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  6:43  error  'Icon' is defined but never used                                               no-unused-vars
+
+C:\Users\divya\OneDrive\Desktop\Projects\Portfolio\src\components\ui\Section.jsx
+  2:10  error  'motion' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+Γ£û 10 problems (10 errors, 0 warnings)
+

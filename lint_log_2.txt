@@ -1,0 +1,10 @@
+﻿
+> my-portfolio@0.0.0 lint
+> eslint .
+
+
+C:\Users\divya\OneDrive\Desktop\Projects\Portfolio\src\components\About.jsx
+  23:45  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+Γ£û 1 problem (1 error, 0 warnings)
+
