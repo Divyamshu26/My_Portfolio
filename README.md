@@ -1,16 +1,68 @@
-# React + Vite
+# 🌐 Personal Portfolio — Giyyar Divyamshu Raghavendra
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and beautifully designed **React.js portfolio website** to showcase my skills, projects, achievements, certifications, and contact details.  
+The UI is light, clean, and minimal with smooth animations and reusable components.
 
-Currently, two official plugins are available:
+## 🔥 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🎨 Modern Light UI
+- Clean and minimal design  
+- Smooth animations using Framer Motion / AOS  
+- Fully responsive on mobile, tablet, and desktop  
 
-## React Compiler
+### 🧩 Sections Included
+- **Hero Section** — Introduction, resume download, call-to-action  
+- **About Me** — Short biography, education, goals  
+- **Skills Section** — Categorized technical skills  
+- **Projects Showcase** — Full-stack & ML projects with descriptions and GitHub links  
+- **Achievements** — Salesforce CTF Top 10, Generative AI Certificate  
+- **Contact Section** — Email, LinkedIn, GitHub, contact form  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend:** React.js  
+- **Styling:** CSS Modules / Tailwind CSS  
+- **Animations:** AOS / Framer Motion  
+- **Icons:** React Icons / Custom SVGs  
+- **Deployment:** Vercel / Netlify / GitHub Pages  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Getting Started
+
+Follow these steps to set up the project locally on your machine.
+
+### Prerequisites
+
+- Node.js (v18 or higher recommended)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Divyamshu26/My_Portfolio.git
+   cd My_Portfolio
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:5173` to view the portfolio.
+
+## 📂 Project Structure
+
+```
+src/
+├── components/       # Reusable UI components (Hero, Navbar, etc.)
+├── ui/              # Generic UI elements
+├── App.jsx          # Main application component
+├── index.css        # Global styles and Tailwind directives
+└── main.jsx         # Entry point
+```
+
