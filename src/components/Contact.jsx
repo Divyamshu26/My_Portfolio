@@ -43,33 +43,33 @@ const Contact = () => {
                     <div className="bg-white/40 backdrop-blur-md border border-white/50 p-8 rounded-2xl shadow-lg">
                         <h3 className="text-2xl font-bold text-slate-800 mb-6">Contact Information</h3>
                         <div className="space-y-6">
-                            <a href="mailto:divyamshu.raghavendra@gmail.com" className="flex items-center gap-4 text-slate-600 hover:text-blue-600 transition-colors">
-                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                            <a href="mailto:divyamshu.raghavendra@gmail.com" className="flex items-center gap-4 text-slate-600 hover:text-blue-600 transition-colors group">
+                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-all">
                                     <Mail size={24} />
                                 </div>
-                                <div>
+                                <div className="min-w-0">
                                     <p className="text-sm font-medium text-slate-500">Email</p>
-                                    <p className="text-lg font-semibold">divyamshu.raghavendra@gmail.com</p>
+                                    <p className="text-lg font-semibold break-all">divyamshu.raghavendra@gmail.com</p>
                                 </div>
                             </a>
 
-                            <a href="https://www.linkedin.com/in/divyamshu-raghavendra-giyyar/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-slate-600 hover:text-blue-600 transition-colors">
-                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                            <a href="https://www.linkedin.com/in/divyamshu-raghavendra-giyyar/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-slate-600 hover:text-blue-600 transition-colors group">
+                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-all">
                                     <Linkedin size={24} />
                                 </div>
-                                <div>
+                                <div className="min-w-0">
                                     <p className="text-sm font-medium text-slate-500">LinkedIn</p>
-                                    <p className="text-lg font-semibold">Giyyar Divyamshu Raghavendra</p>
+                                    <p className="text-lg font-semibold break-words">Giyyar Divyamshu Raghavendra</p>
                                 </div>
                             </a>
 
-                            <a href="https://github.com/Divyamshu26" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-slate-600 hover:text-blue-600 transition-colors">
-                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                            <a href="https://github.com/Divyamshu26" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-slate-600 hover:text-blue-600 transition-colors group">
+                                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-all">
                                     <Github size={24} />
                                 </div>
-                                <div>
+                                <div className="min-w-0">
                                     <p className="text-sm font-medium text-slate-500">GitHub</p>
-                                    <p className="text-lg font-semibold">Divyamshu26</p>
+                                    <p className="text-lg font-semibold break-all">Divyamshu26</p>
                                 </div>
                             </a>
                         </div>
