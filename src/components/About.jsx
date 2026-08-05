@@ -16,14 +16,17 @@ const About = () => {
                         About Me
                     </h2>
                     <div className="space-y-4 text-slate-600 text-lg leading-relaxed">
-                        <p>
-                            I am a final-year engineering student with a strong foundation in AI/ML, backend systems, and full-stack engineering.
+                        <p className="font-semibold text-slate-800 text-xl">
+                            Hi, I&apos;m Divyamshu Raghavendra.
                         </p>
                         <p>
-                            Although I haven&apos;t had formal internships yet, I have dedicated my time to building impactful real-world projects that solve actual problems. My passion lies in bridging the gap between complex AI models and user-friendly applications.
+                            I&apos;m a Computer Science Engineering graduate and Full Stack Developer passionate about building scalable, user-centric web applications. I enjoy working across the entire development lifecycle—from creating intuitive frontend experiences to developing secure backend systems, REST APIs, and efficient database architectures.
                         </p>
                         <p>
-                            I am actively looking for roles in Software Development, AI/ML, or Data Engineering where I can apply my problem-solving skills and technical expertise.
+                            Alongside full-stack development, I&apos;ve worked on AI and Machine Learning projects by integrating technologies like Generative AI, predictive models, and conversational assistants into real-world applications. I enjoy writing clean, maintainable code and continuously learning modern technologies to build practical software solutions.
+                        </p>
+                        <p>
+                            I&apos;m currently seeking opportunities as a Software Engineer, Full Stack Developer, Backend Developer, or AI Engineer, where I can contribute to impactful products while continuing to grow as a developer.
                         </p>
                     </div>
                 </motion.div>
@@ -38,14 +41,15 @@ const About = () => {
                     <h3 className="text-xl font-semibold mb-6 text-slate-800">Key Highlights</h3>
                     <ul className="space-y-4">
                         {[
-                            "Top 10 in Salesforce CTF",
-                            "Certified in Generative AI",
-                            "Strong Problem Solving & DSA Skills",
-                            "10+ Real-world Projects Built"
+                            "🏆 Top 10 in Salesforce CTF",
+                            "🤖 Certified in Generative AI",
+                            "💻 10+ Full Stack & AI Projects",
+                            "📚 Strong DSA & Problem Solving",
+                            "🌐 MERN & FastAPI Development",
+                            "🧠 Machine Learning & LLM Integration"
                         ].map((item, index) => (
-                            <li key={index} className="flex items-center gap-3 text-slate-700">
-                                <span className="w-2 h-2 rounded-full bg-blue-500" />
-                                {item}
+                            <li key={index} className="flex items-center gap-3 text-slate-700 font-medium">
+                                <span>{item}</span>
                             </li>
                         ))}
                     </ul>

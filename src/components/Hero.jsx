@@ -29,7 +29,7 @@ const Hero = () => {
                             Software Developer | AI/ML | Backend
                         </h2>
                         <p className="text-lg text-slate-700 md:text-slate-500 leading-relaxed max-w-lg">
-                            Final-year engineering student passionate about building real-world applications in AI, ML, backend systems, and scalable full-stack development.
+                            Computer Science Engineering graduate passionate about building real-world applications in AI, ML, backend systems, and scalable full-stack development.
                         </p>
                     </motion.div>
 
