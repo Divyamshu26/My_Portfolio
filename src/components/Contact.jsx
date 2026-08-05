@@ -76,7 +76,7 @@ const Contact = () => {
 
                         <div className="mt-8 pt-8 border-t border-slate-200">
                             <a
-                                href="/resumenew.pdf"
+                                href="/SDE%20ALL.pdf"
                                 download
                                 className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-slate-800 text-white rounded-xl hover:bg-slate-900 transition-all shadow-lg"
                             >

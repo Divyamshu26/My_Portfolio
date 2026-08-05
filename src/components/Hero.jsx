@@ -46,7 +46,7 @@ const Hero = () => {
                             View Projects <ArrowRight size={18} />
                         </a>
                         <a
-                            href="/resumenew.pdf"
+                            href="/SDE%20ALL.pdf"
                             download
                             className="px-8 py-3 bg-white border border-slate-200 text-slate-700 rounded-full font-medium hover:bg-slate-50 transition-all flex items-center gap-2"
                         >
