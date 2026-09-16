@@ -19,13 +19,6 @@ export const projectsData = [
             "AI / ML": ["Gemini API"],
             "Integrations": ["Firebase Auth", "Google Fit Integration"]
         },
-        architectureFlow: [
-            "React Native Mobile App",
-            "Node.js & Express API Gateway",
-            "MongoDB & Firebase Security",
-            "Gemini AI Engine",
-            "Personalized Health Insights"
-        ],
         keyFeatures: [
             { icon: "Brain", title: "Intelligent Cycle Prediction", desc: "Machine learning based prediction of upcoming menstrual cycles." },
             { icon: "MessageSquare", title: "AI Healthcare Chatbot", desc: "Conversational assistant providing instant health guidance." },
@@ -62,6 +55,8 @@ export const projectsData = [
         github: "https://github.com/dheerajnandiraju/mensies/tree/divyamshu",
         demo: null,
         docs: null,
+        architectureDiagram: "/Syla Architecture diagram.jpg",
+        systemDesignDiagram: "/Syla System diagram.jpg",
         repoMeta: {
             visibility: "Public",
             primaryLanguage: "JavaScript / Python",
@@ -88,13 +83,6 @@ export const projectsData = [
             "AI / ML": ["Gemini API", "LangChain", "RAG", "Scikit-learn", "Pandas"],
             "Tools": ["Git", "Virtualenv"]
         },
-        architectureFlow: [
-            "React Interactive Frontend",
-            "FastAPI Backend Service",
-            "ChromaDB Vector Store (RAG)",
-            "Gemini & Scikit-Learn Engines",
-            "Fare & Travel Insights Output"
-        ],
         keyFeatures: [
             { icon: "Bot", title: "AI Ride Assistant", desc: "Generative AI chatbot for ride queries and recommendations." },
             { icon: "History", title: "Ride History Analysis", desc: "Automated analysis of previous trips and spending trends." },
@@ -131,6 +119,8 @@ export const projectsData = [
         github: "https://github.com/Divyamshu26/ridepal-genai",
         demo: null,
         docs: null,
+        architectureDiagram: "/Ridepal architecture diagram.png",
+        systemDesignDiagram: "/Ridepal System Design Diagram.png",
         repoMeta: {
             visibility: "Public",
             primaryLanguage: "Python / JavaScript",
@@ -157,13 +147,6 @@ export const projectsData = [
             "AI / ML": ["Gemini AI", "Python"],
             "Integrations": ["Firebase Auth", "Google Maps API"]
         },
-        architectureFlow: [
-            "Donor Web App (React)",
-            "Node.js API Gateway",
-            "MongoDB Database",
-            "Gemini AI Food Quality Check",
-            "NGO & Volunteer Logistics Match"
-        ],
         keyFeatures: [
             { icon: "HeartHandshake", title: "Food Donation Portal", desc: "Easy listing of surplus food items by donors." },
             { icon: "Building2", title: "NGO Management Dashboard", desc: "Real-time requests and allocation for NGOs." },
@@ -200,6 +183,8 @@ export const projectsData = [
         github: "https://github.com/Divyamshu26/choti_bhojan_yatra",
         demo: null,
         docs: null,
+        architectureDiagram: "/Choti Bhojan Yatra Architecture diagram.jpg",
+        systemDesignDiagram: "/Choti Bhojan Yatra system design.jpg",
         repoMeta: {
             visibility: "Public",
             primaryLanguage: "JavaScript",

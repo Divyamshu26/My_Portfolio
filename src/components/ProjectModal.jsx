@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     X, Github, ExternalLink, BookOpen, Brain, MessageSquare, Sparkles, Activity,
@@ -8,7 +8,7 @@ import {
     Sliders, ShieldAlert, Cpu, GitCommit, BarChart, Calculator, PieChart, TrendingUp,
     GitBranch, LineChart, Package, FileText, Target, Hash, Layers, CheckCircle,
     Workflow, GitPullRequest, BarChart2, Home, ArrowRight, Check, AlertCircle,
-    Lightbulb, Code
+    Lightbulb, Code, Maximize2, Image as ImageIcon, ZoomIn
 } from 'lucide-react';
 
 const ICON_MAP = {
@@ -53,6 +53,7 @@ const itemVariants = {
 };
 
 const ProjectModal = ({ project, onClose }) => {
+    const [activeDiagram, setActiveDiagram] = useState(null);
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (e.key === 'Escape') onClose();
@@ -152,8 +153,8 @@ const ProjectModal = ({ project, onClose }) => {
                                 </p>
                             </motion.section>
 
-                            {/* 4. Architecture Section */}
-                            {project.architectureFlow && (
+                            {/* 4. Architecture Flow Section (shown only if no image diagram is provided) */}
+                            {project.architectureFlow && !project.architectureDiagram && (
                                 <motion.section variants={itemVariants} className="space-y-4">
                                     <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
                                         <Workflow size={20} className="text-indigo-600" /> Architecture Flow
@@ -174,6 +175,72 @@ const ProjectModal = ({ project, onClose }) => {
                                                 </React.Fragment>
                                             ))}
                                         </div>
+                                    </div>
+                                </motion.section>
+                            )}
+
+                            {/* 4b. System Design & Architecture Diagrams Section */}
+                            {(project.architectureDiagram || project.systemDesignDiagram) && (
+                                <motion.section variants={itemVariants} className="space-y-4">
+                                    <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                                        <ImageIcon size={20} className="text-emerald-600" /> Architecture & System Design Diagrams
+                                    </h3>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        {project.architectureDiagram && (
+                                            <div
+                                                onClick={() => setActiveDiagram({ src: project.architectureDiagram, title: `${project.title} Architecture Diagram` })}
+                                                className="group relative bg-slate-900 rounded-2xl overflow-hidden border border-slate-700/60 shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:border-blue-500"
+                                            >
+                                                <div className="p-3.5 bg-slate-800/90 border-b border-slate-700/80 flex items-center justify-between">
+                                                    <span className="text-xs font-bold text-slate-200 uppercase tracking-wider flex items-center gap-1.5">
+                                                        <Workflow size={14} className="text-blue-400" /> Architecture Diagram
+                                                    </span>
+                                                    <span className="text-xs font-medium text-slate-400 flex items-center gap-1 group-hover:text-blue-400 transition-colors">
+                                                        <ZoomIn size={14} /> Click to view
+                                                    </span>
+                                                </div>
+                                                <div className="relative aspect-video w-full bg-slate-950 flex items-center justify-center p-2 overflow-hidden">
+                                                    <img
+                                                        src={project.architectureDiagram}
+                                                        alt={`${project.title} Architecture Diagram`}
+                                                        className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                                                    />
+                                                    <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                                                        <span className="px-4 py-2 rounded-xl bg-white/20 text-white font-semibold text-xs backdrop-blur-md border border-white/30 flex items-center gap-2 shadow-lg">
+                                                            <Maximize2 size={16} /> View Full Resolution
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {project.systemDesignDiagram && (
+                                            <div
+                                                onClick={() => setActiveDiagram({ src: project.systemDesignDiagram, title: `${project.title} System Design Diagram` })}
+                                                className="group relative bg-slate-900 rounded-2xl overflow-hidden border border-slate-700/60 shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:border-purple-500"
+                                            >
+                                                <div className="p-3.5 bg-slate-800/90 border-b border-slate-700/80 flex items-center justify-between">
+                                                    <span className="text-xs font-bold text-slate-200 uppercase tracking-wider flex items-center gap-1.5">
+                                                        <Layers size={14} className="text-purple-400" /> System Design Diagram
+                                                    </span>
+                                                    <span className="text-xs font-medium text-slate-400 flex items-center gap-1 group-hover:text-purple-400 transition-colors">
+                                                        <ZoomIn size={14} /> Click to view
+                                                    </span>
+                                                </div>
+                                                <div className="relative aspect-video w-full bg-slate-950 flex items-center justify-center p-2 overflow-hidden">
+                                                    <img
+                                                        src={project.systemDesignDiagram}
+                                                        alt={`${project.title} System Design Diagram`}
+                                                        className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                                                    />
+                                                    <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                                                        <span className="px-4 py-2 rounded-xl bg-white/20 text-white font-semibold text-xs backdrop-blur-md border border-white/30 flex items-center gap-2 shadow-lg">
+                                                            <Maximize2 size={16} /> View Full Resolution
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
                                 </motion.section>
                             )}
@@ -341,6 +408,45 @@ const ProjectModal = ({ project, onClose }) => {
                     </div>
                 </motion.div>
             </div>
+
+            {/* Fullscreen Image Lightbox Overlay */}
+            <AnimatePresence>
+                {activeDiagram && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setActiveDiagram(null)}
+                        className="fixed inset-0 z-[60] bg-slate-950/90 backdrop-blur-2xl p-4 sm:p-8 flex flex-col items-center justify-center cursor-zoom-out"
+                    >
+                        <button
+                            onClick={() => setActiveDiagram(null)}
+                            className="absolute top-6 right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all shadow-xl backdrop-blur-md z-10"
+                            aria-label="Close diagram preview"
+                        >
+                            <X size={24} />
+                        </button>
+                        <div className="mb-4 text-center max-w-2xl" onClick={(e) => e.stopPropagation()}>
+                            <h4 className="text-white font-bold text-lg sm:text-xl drop-shadow-md">
+                                {activeDiagram.title}
+                            </h4>
+                            <p className="text-slate-400 text-xs sm:text-sm mt-1">
+                                High-resolution architecture & system design visual
+                            </p>
+                        </div>
+                        <div
+                            className="relative max-w-full max-h-[82vh] flex items-center justify-center p-2 rounded-2xl bg-slate-900/80 border border-white/10 shadow-2xl overflow-auto custom-scrollbar"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <img
+                                src={activeDiagram.src}
+                                alt={activeDiagram.title}
+                                className="max-w-full max-h-[78vh] object-contain rounded-lg shadow-inner"
+                            />
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </AnimatePresence>
     );
 };
