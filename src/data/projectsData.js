@@ -55,8 +55,8 @@ export const projectsData = [
         github: "https://github.com/dheerajnandiraju/mensies/tree/divyamshu",
         demo: null,
         docs: null,
-        architectureDiagram: "/Syla Architecture diagram.jpg",
-        systemDesignDiagram: "/Syla System diagram.jpg",
+        architectureDiagram: "/Syla Architecture diagram.webp",
+        systemDesignDiagram: "/Syla System diagram.webp",
         repoMeta: {
             visibility: "Public",
             primaryLanguage: "JavaScript / Python",
@@ -119,8 +119,8 @@ export const projectsData = [
         github: "https://github.com/Divyamshu26/ridepal-genai",
         demo: null,
         docs: null,
-        architectureDiagram: "/Ridepal architecture diagram.png",
-        systemDesignDiagram: "/Ridepal System Design Diagram.png",
+        architectureDiagram: "/Ridepal architecture diagram.webp",
+        systemDesignDiagram: "/Ridepal System Design Diagram.webp",
         repoMeta: {
             visibility: "Public",
             primaryLanguage: "Python / JavaScript",
@@ -183,8 +183,8 @@ export const projectsData = [
         github: "https://github.com/Divyamshu26/choti_bhojan_yatra",
         demo: null,
         docs: null,
-        architectureDiagram: "/Choti Bhojan Yatra Architecture diagram.jpg",
-        systemDesignDiagram: "/Choti Bhojan Yatra system design.jpg",
+        architectureDiagram: "/Choti Bhojan Yatra Architecture diagram.webp",
+        systemDesignDiagram: "/Choti Bhojan Yatra system design.webp",
         repoMeta: {
             visibility: "Public",
             primaryLanguage: "JavaScript",

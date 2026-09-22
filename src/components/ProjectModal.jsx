@@ -8,7 +8,7 @@ import {
     Sliders, ShieldAlert, Cpu, GitCommit, BarChart, Calculator, PieChart, TrendingUp,
     GitBranch, LineChart, Package, FileText, Target, Hash, Layers, CheckCircle,
     Workflow, GitPullRequest, BarChart2, Home, ArrowRight, Check, AlertCircle,
-    Lightbulb, Code, Maximize2, Image as ImageIcon, ZoomIn
+    Lightbulb, Code, Maximize2, Image as ImageIcon, ZoomIn, Loader2
 } from 'lucide-react';
 
 const ICON_MAP = {
@@ -52,8 +52,57 @@ const itemVariants = {
     visible: { opacity: 1, y: 0, transition: { duration: 0.3, ease: 'easeOut' } }
 };
 
+const DiagramCard = ({ src, title, typeLabel, icon: Icon, iconColor, hoverBorderColor, onZoom }) => {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    return (
+        <div
+            onClick={onZoom}
+            className={`group relative bg-slate-900 rounded-2xl overflow-hidden border border-slate-700/60 shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl ${hoverBorderColor}`}
+        >
+            <div className="p-3.5 bg-slate-800/90 border-b border-slate-700/80 flex items-center justify-between">
+                <span className="text-xs font-bold text-slate-200 uppercase tracking-wider flex items-center gap-1.5">
+                    <Icon size={14} className={iconColor} /> {typeLabel}
+                </span>
+                <span className="text-xs font-medium text-slate-400 flex items-center gap-1 group-hover:text-white transition-colors">
+                    <ZoomIn size={14} /> Click to view
+                </span>
+            </div>
+            <div className="relative aspect-video w-full bg-slate-950 flex items-center justify-center p-2 overflow-hidden">
+                {!isLoaded && (
+                    <div className="absolute inset-0 bg-slate-950 flex flex-col items-center justify-center gap-2 z-0">
+                        <Loader2 size={24} className="text-blue-400 animate-spin" />
+                        <span className="text-xs text-slate-400 font-medium">Loading diagram...</span>
+                    </div>
+                )}
+                <img
+                    src={src}
+                    alt={title}
+                    loading="lazy"
+                    decoding="async"
+                    onLoad={() => setIsLoaded(true)}
+                    className={`w-full h-full object-contain transition-all duration-500 group-hover:scale-105 relative z-10 ${
+                        isLoaded ? 'opacity-100' : 'opacity-0'
+                    }`}
+                />
+                <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px] z-20">
+                    <span className="px-4 py-2 rounded-xl bg-white/20 text-white font-semibold text-xs backdrop-blur-md border border-white/30 flex items-center gap-2 shadow-lg">
+                        <Maximize2 size={16} /> View Full Resolution
+                    </span>
+                </div>
+            </div>
+        </div>
+    );
+};
+
 const ProjectModal = ({ project, onClose }) => {
     const [activeDiagram, setActiveDiagram] = useState(null);
+    const [lightboxLoaded, setLightboxLoaded] = useState(false);
+
+    const handleOpenDiagram = (diagram) => {
+        setLightboxLoaded(false);
+        setActiveDiagram(diagram);
+    };
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (e.key === 'Escape') onClose();
@@ -187,59 +236,27 @@ const ProjectModal = ({ project, onClose }) => {
                                     </h3>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         {project.architectureDiagram && (
-                                            <div
-                                                onClick={() => setActiveDiagram({ src: project.architectureDiagram, title: `${project.title} Architecture Diagram` })}
-                                                className="group relative bg-slate-900 rounded-2xl overflow-hidden border border-slate-700/60 shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:border-blue-500"
-                                            >
-                                                <div className="p-3.5 bg-slate-800/90 border-b border-slate-700/80 flex items-center justify-between">
-                                                    <span className="text-xs font-bold text-slate-200 uppercase tracking-wider flex items-center gap-1.5">
-                                                        <Workflow size={14} className="text-blue-400" /> Architecture Diagram
-                                                    </span>
-                                                    <span className="text-xs font-medium text-slate-400 flex items-center gap-1 group-hover:text-blue-400 transition-colors">
-                                                        <ZoomIn size={14} /> Click to view
-                                                    </span>
-                                                </div>
-                                                <div className="relative aspect-video w-full bg-slate-950 flex items-center justify-center p-2 overflow-hidden">
-                                                    <img
-                                                        src={project.architectureDiagram}
-                                                        alt={`${project.title} Architecture Diagram`}
-                                                        className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
-                                                    />
-                                                    <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                                                        <span className="px-4 py-2 rounded-xl bg-white/20 text-white font-semibold text-xs backdrop-blur-md border border-white/30 flex items-center gap-2 shadow-lg">
-                                                            <Maximize2 size={16} /> View Full Resolution
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <DiagramCard
+                                                src={project.architectureDiagram}
+                                                title={`${project.title} Architecture Diagram`}
+                                                typeLabel="Architecture Diagram"
+                                                icon={Workflow}
+                                                iconColor="text-blue-400"
+                                                hoverBorderColor="hover:border-blue-500"
+                                                onZoom={() => handleOpenDiagram({ src: project.architectureDiagram, title: `${project.title} Architecture Diagram` })}
+                                            />
                                         )}
 
                                         {project.systemDesignDiagram && (
-                                            <div
-                                                onClick={() => setActiveDiagram({ src: project.systemDesignDiagram, title: `${project.title} System Design Diagram` })}
-                                                className="group relative bg-slate-900 rounded-2xl overflow-hidden border border-slate-700/60 shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:border-purple-500"
-                                            >
-                                                <div className="p-3.5 bg-slate-800/90 border-b border-slate-700/80 flex items-center justify-between">
-                                                    <span className="text-xs font-bold text-slate-200 uppercase tracking-wider flex items-center gap-1.5">
-                                                        <Layers size={14} className="text-purple-400" /> System Design Diagram
-                                                    </span>
-                                                    <span className="text-xs font-medium text-slate-400 flex items-center gap-1 group-hover:text-purple-400 transition-colors">
-                                                        <ZoomIn size={14} /> Click to view
-                                                    </span>
-                                                </div>
-                                                <div className="relative aspect-video w-full bg-slate-950 flex items-center justify-center p-2 overflow-hidden">
-                                                    <img
-                                                        src={project.systemDesignDiagram}
-                                                        alt={`${project.title} System Design Diagram`}
-                                                        className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
-                                                    />
-                                                    <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                                                        <span className="px-4 py-2 rounded-xl bg-white/20 text-white font-semibold text-xs backdrop-blur-md border border-white/30 flex items-center gap-2 shadow-lg">
-                                                            <Maximize2 size={16} /> View Full Resolution
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <DiagramCard
+                                                src={project.systemDesignDiagram}
+                                                title={`${project.title} System Design Diagram`}
+                                                typeLabel="System Design Diagram"
+                                                icon={Layers}
+                                                iconColor="text-purple-400"
+                                                hoverBorderColor="hover:border-purple-500"
+                                                onZoom={() => handleOpenDiagram({ src: project.systemDesignDiagram, title: `${project.title} System Design Diagram` })}
+                                            />
                                         )}
                                     </div>
                                 </motion.section>
@@ -435,13 +452,24 @@ const ProjectModal = ({ project, onClose }) => {
                             </p>
                         </div>
                         <div
-                            className="relative max-w-full max-h-[82vh] flex items-center justify-center p-2 rounded-2xl bg-slate-900/80 border border-white/10 shadow-2xl overflow-auto custom-scrollbar"
+                            className="relative max-w-full max-h-[82vh] min-h-[250px] min-w-[280px] sm:min-w-[420px] flex items-center justify-center p-2 rounded-2xl bg-slate-900/80 border border-white/10 shadow-2xl overflow-auto custom-scrollbar"
                             onClick={(e) => e.stopPropagation()}
                         >
+                            {!lightboxLoaded && (
+                                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 z-0">
+                                    <Loader2 size={32} className="text-blue-400 animate-spin" />
+                                    <span className="text-xs sm:text-sm text-slate-300 font-medium">Loading high-resolution diagram...</span>
+                                </div>
+                            )}
                             <img
                                 src={activeDiagram.src}
                                 alt={activeDiagram.title}
-                                className="max-w-full max-h-[78vh] object-contain rounded-lg shadow-inner"
+                                loading="eager"
+                                decoding="async"
+                                onLoad={() => setLightboxLoaded(true)}
+                                className={`max-w-full max-h-[78vh] object-contain rounded-lg shadow-inner relative z-10 transition-opacity duration-300 ${
+                                    lightboxLoaded ? 'opacity-100' : 'opacity-0'
+                                }`}
                             />
                         </div>
                     </motion.div>

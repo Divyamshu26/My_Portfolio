@@ -75,7 +75,7 @@ const Hero = () => {
                                 Open to Work
                             </div>
                             <motion.img
-                                src="/boy_coding.png"
+                                src="/boy_coding.webp"
                                 alt="Coding Illustration"
                                 className="w-full h-full object-contain drop-shadow-2xl"
                                 animate={{ y: [0, -10, 0] }}
