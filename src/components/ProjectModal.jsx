@@ -137,7 +137,7 @@ const ProjectModal = ({ project, onClose }) => {
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    className="relative w-full max-w-[1000px] max-h-[90vh] bg-white/90 backdrop-blur-2xl rounded-[24px] shadow-2xl border border-white/60 overflow-hidden flex flex-col z-10 text-slate-800 my-auto"
+                    className="relative w-full max-w-[1000px] max-h-[90vh] bg-white/95 dark:bg-slate-900/95 backdrop-blur-2xl rounded-[24px] shadow-2xl border border-white/60 dark:border-slate-700/60 overflow-hidden flex flex-col z-10 text-slate-800 dark:text-slate-100 my-auto"
                 >
                     {/* Sticky Header Close Button */}
                     <button
@@ -174,30 +174,30 @@ const ProjectModal = ({ project, onClose }) => {
                         <div className="p-6 sm:p-10 space-y-10">
                             {/* 2. Project Quick Stats */}
                             <motion.div variants={itemVariants} className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm flex flex-col">
+                                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700/70 shadow-sm flex flex-col">
                                     <span className="text-xs uppercase font-bold tracking-wider text-slate-400">Category</span>
-                                    <span className="text-sm sm:text-base font-semibold text-slate-800 mt-1">{project.stats.type}</span>
+                                    <span className="text-sm sm:text-base font-semibold text-slate-800 dark:text-slate-100 mt-1">{project.stats.type}</span>
                                 </div>
-                                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm flex flex-col">
+                                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700/70 shadow-sm flex flex-col">
                                     <span className="text-xs uppercase font-bold tracking-wider text-slate-400">Architecture</span>
-                                    <span className="text-sm sm:text-base font-semibold text-slate-800 mt-1">{project.stats.architecture}</span>
+                                    <span className="text-sm sm:text-base font-semibold text-slate-800 dark:text-slate-100 mt-1">{project.stats.architecture}</span>
                                 </div>
-                                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm flex flex-col">
+                                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700/70 shadow-sm flex flex-col">
                                     <span className="text-xs uppercase font-bold tracking-wider text-slate-400">Year</span>
-                                    <span className="text-sm sm:text-base font-semibold text-slate-800 mt-1">{project.stats.year}</span>
+                                    <span className="text-sm sm:text-base font-semibold text-slate-800 dark:text-slate-100 mt-1">{project.stats.year}</span>
                                 </div>
-                                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm flex flex-col">
+                                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700/70 shadow-sm flex flex-col">
                                     <span className="text-xs uppercase font-bold tracking-wider text-slate-400">Scope</span>
-                                    <span className="text-sm sm:text-base font-semibold text-slate-800 mt-1">{project.stats.featuresCount}</span>
+                                    <span className="text-sm sm:text-base font-semibold text-slate-800 dark:text-slate-100 mt-1">{project.stats.featuresCount}</span>
                                 </div>
                             </motion.div>
 
                             {/* 3. Project Overview */}
                             <motion.section variants={itemVariants} className="space-y-3">
-                                <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                                    <FileText size={20} className="text-blue-600" /> Project Overview
+                                <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                    <FileText size={20} className="text-blue-600 dark:text-blue-400" /> Project Overview
                                 </h3>
-                                <p className="text-slate-600 leading-relaxed text-base sm:text-lg bg-slate-50/70 p-5 rounded-2xl border border-slate-100">
+                                <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-lg bg-slate-50/70 dark:bg-slate-800/60 p-5 rounded-2xl border border-slate-100 dark:border-slate-700/70">
                                     {project.overview}
                                 </p>
                             </motion.section>
@@ -205,8 +205,8 @@ const ProjectModal = ({ project, onClose }) => {
                             {/* 4. Architecture Flow Section (shown only if no image diagram is provided) */}
                             {project.architectureFlow && !project.architectureDiagram && (
                                 <motion.section variants={itemVariants} className="space-y-4">
-                                    <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                                        <Workflow size={20} className="text-indigo-600" /> Architecture Flow
+                                    <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                        <Workflow size={20} className="text-indigo-600 dark:text-indigo-400" /> Architecture Flow
                                     </h3>
                                     <div className="p-6 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-lg overflow-x-auto">
                                         <div className="flex items-center gap-3 min-w-max">
@@ -231,8 +231,8 @@ const ProjectModal = ({ project, onClose }) => {
                             {/* 4b. System Design & Architecture Diagrams Section */}
                             {(project.architectureDiagram || project.systemDesignDiagram) && (
                                 <motion.section variants={itemVariants} className="space-y-4">
-                                    <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                                        <ImageIcon size={20} className="text-emerald-600" /> Architecture & System Design Diagrams
+                                    <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                        <ImageIcon size={20} className="text-emerald-600 dark:text-emerald-400" /> Architecture & System Design Diagrams
                                     </h3>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         {project.architectureDiagram && (
@@ -264,18 +264,18 @@ const ProjectModal = ({ project, onClose }) => {
 
                             {/* 5. Categorized Tech Stack */}
                             <motion.section variants={itemVariants} className="space-y-4">
-                                <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                                    <Layers size={20} className="text-purple-600" /> Categorized Tech Stack
+                                <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                    <Layers size={20} className="text-purple-600 dark:text-purple-400" /> Categorized Tech Stack
                                 </h3>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                                     {Object.entries(project.categorizedTech).map(([category, items]) => (
-                                        <div key={category} className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm">
+                                        <div key={category} className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700/70 shadow-sm">
                                             <h4 className="text-xs uppercase font-bold tracking-wider text-slate-400 mb-3">{category}</h4>
                                             <div className="flex flex-wrap gap-2">
                                                 {items.map((tech) => (
                                                     <span
                                                         key={tech}
-                                                        className="px-3 py-1 rounded-full text-xs font-semibold bg-white text-slate-700 border border-slate-200 shadow-2xs hover:border-blue-300 transition-colors"
+                                                        className="px-3 py-1 rounded-full text-xs font-semibold bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 shadow-2xs hover:border-blue-300 dark:hover:border-blue-500 transition-colors"
                                                     >
                                                         {tech}
                                                     </span>
@@ -288,8 +288,8 @@ const ProjectModal = ({ project, onClose }) => {
 
                             {/* 6. Key Features (Animated Cards Grid) */}
                             <motion.section variants={itemVariants} className="space-y-4">
-                                <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                                    <Sparkles size={20} className="text-rose-600" /> Key Features
+                                <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                    <Sparkles size={20} className="text-rose-600 dark:text-rose-400" /> Key Features
                                 </h3>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     {project.keyFeatures.map((feat, i) => (
@@ -297,16 +297,16 @@ const ProjectModal = ({ project, onClose }) => {
                                             key={i}
                                             whileHover={{ y: -3, scale: 1.01 }}
                                             transition={{ duration: 0.25 }}
-                                            className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md transition-all hover:border-blue-200 group flex items-start gap-4"
+                                            className="p-5 rounded-2xl bg-white dark:bg-slate-800/70 border border-slate-200/90 dark:border-slate-700/70 shadow-sm hover:shadow-md transition-all hover:border-blue-200 dark:hover:border-blue-500/50 group flex items-start gap-4"
                                         >
-                                            <div className="p-3 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors shrink-0">
+                                            <div className="p-3 rounded-xl bg-blue-50 dark:bg-blue-950/70 text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-colors shrink-0">
                                                 <DynamicIcon name={feat.icon} size={22} />
                                             </div>
                                             <div>
-                                                <h4 className="font-bold text-slate-900 text-base group-hover:text-blue-600 transition-colors">
+                                                <h4 className="font-bold text-slate-900 dark:text-white text-base group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                                                     {feat.title}
                                                 </h4>
-                                                <p className="text-slate-600 text-sm mt-1 leading-snug">
+                                                <p className="text-slate-600 dark:text-slate-300 text-sm mt-1 leading-snug">
                                                     {feat.desc}
                                                 </p>
                                             </div>
@@ -317,13 +317,13 @@ const ProjectModal = ({ project, onClose }) => {
 
                             {/* 7. Skills Demonstrated */}
                             <motion.section variants={itemVariants} className="space-y-3">
-                                <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                                    <CheckCircle size={20} className="text-emerald-600" /> Skills Demonstrated
+                                <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                    <CheckCircle size={20} className="text-emerald-600 dark:text-emerald-400" /> Skills Demonstrated
                                 </h3>
                                 <div className="flex flex-wrap gap-2.5">
                                     {project.skills.map((skill, i) => (
-                                        <div key={i} className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-emerald-50 text-emerald-800 text-sm font-semibold border border-emerald-200/80">
-                                            <Check size={16} className="text-emerald-600 shrink-0" />
+                                        <div key={i} className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 text-sm font-semibold border border-emerald-200/80 dark:border-emerald-800/60">
+                                            <Check size={16} className="text-emerald-600 dark:text-emerald-400 shrink-0" />
                                             <span>{skill}</span>
                                         </div>
                                     ))}
@@ -333,11 +333,11 @@ const ProjectModal = ({ project, onClose }) => {
                             {/* 8. Challenges Solved & What I Learned */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {/* Challenges Solved */}
-                                <motion.section variants={itemVariants} className="space-y-3 p-5 rounded-2xl bg-slate-50 border border-slate-200/80">
-                                    <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                                        <AlertCircle size={20} className="text-amber-600" /> Challenges Solved
+                                <motion.section variants={itemVariants} className="space-y-3 p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700/70">
+                                    <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                        <AlertCircle size={20} className="text-amber-600 dark:text-amber-400" /> Challenges Solved
                                     </h3>
-                                    <ul className="space-y-2 text-slate-600 text-sm leading-relaxed">
+                                    <ul className="space-y-2 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
                                         {project.challenges.map((item, idx) => (
                                             <li key={idx} className="flex items-start gap-2">
                                                 <span className="text-amber-500 font-bold mt-0.5">•</span>
@@ -348,11 +348,11 @@ const ProjectModal = ({ project, onClose }) => {
                                 </motion.section>
 
                                 {/* What I Learned */}
-                                <motion.section variants={itemVariants} className="space-y-3 p-5 rounded-2xl bg-slate-50 border border-slate-200/80">
-                                    <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                                        <Lightbulb size={20} className="text-yellow-600" /> What I Learned
+                                <motion.section variants={itemVariants} className="space-y-3 p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700/70">
+                                    <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                        <Lightbulb size={20} className="text-yellow-600 dark:text-yellow-400" /> What I Learned
                                     </h3>
-                                    <ul className="space-y-2 text-slate-600 text-sm leading-relaxed">
+                                    <ul className="space-y-2 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
                                         {project.learnings.map((item, idx) => (
                                             <li key={idx} className="flex items-start gap-2">
                                                 <span className="text-yellow-500 font-bold mt-0.5">•</span>
@@ -365,13 +365,13 @@ const ProjectModal = ({ project, onClose }) => {
 
                             {/* 9. Highlights */}
                             <motion.section variants={itemVariants} className="space-y-3">
-                                <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                                    <Target size={20} className="text-teal-600" /> Highlights
+                                <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                    <Target size={20} className="text-teal-600 dark:text-teal-400" /> Highlights
                                 </h3>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     {project.highlights.map((highlight, idx) => (
-                                        <div key={idx} className="p-4 rounded-xl bg-gradient-to-r from-blue-50/70 to-indigo-50/70 border border-blue-100 text-slate-800 text-sm font-semibold flex items-center gap-3">
-                                            <span className="w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0" />
+                                        <div key={idx} className="p-4 rounded-xl bg-gradient-to-r from-blue-50/70 to-indigo-50/70 dark:from-blue-950/50 dark:to-indigo-950/50 border border-blue-100 dark:border-blue-800/50 text-slate-800 dark:text-slate-200 text-sm font-semibold flex items-center gap-3">
+                                            <span className="w-2.5 h-2.5 rounded-full bg-blue-600 dark:bg-blue-400 shrink-0" />
                                             {highlight}
                                         </div>
                                     ))}
@@ -379,10 +379,10 @@ const ProjectModal = ({ project, onClose }) => {
                             </motion.section>
 
                             {/* 10. Repository Preview & Modern Action Buttons */}
-                            <motion.div variants={itemVariants} className="pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <motion.div variants={itemVariants} className="pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
                                 {project.repoMeta && (
-                                    <div className="flex items-center gap-3 text-xs font-semibold text-slate-500">
-                                        <span className="px-2.5 py-1 rounded-md bg-slate-100 border border-slate-200">
+                                    <div className="flex items-center gap-3 text-xs font-semibold text-slate-500 dark:text-slate-400">
+                                        <span className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
                                             {project.repoMeta.visibility} Repository
                                         </span>
                                         <span>•</span>
@@ -396,7 +396,7 @@ const ProjectModal = ({ project, onClose }) => {
                                             href={project.github}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-900 text-white font-semibold text-sm hover:bg-slate-800 transition-all shadow-md hover:shadow-lg active:scale-98"
+                                            className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-900 dark:bg-slate-800 text-white font-semibold text-sm hover:bg-slate-800 dark:hover:bg-slate-700 transition-all shadow-md hover:shadow-lg active:scale-98 border border-transparent dark:border-slate-700"
                                         >
                                             <Github size={18} /> View on GitHub
                                         </a>
@@ -414,7 +414,7 @@ const ProjectModal = ({ project, onClose }) => {
                                     ) : (
                                         <button
                                             disabled
-                                            className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-100 text-slate-400 font-semibold text-sm cursor-not-allowed border border-slate-200"
+                                            className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-100 dark:bg-slate-800/60 text-slate-400 dark:text-slate-500 font-semibold text-sm cursor-not-allowed border border-slate-200 dark:border-slate-700/60"
                                         >
                                             <ExternalLink size={18} /> Demo Unavailable
                                         </button>

@@ -9,12 +9,12 @@ const AchievementCard = ({ title, icon: Icon, delay }) => (
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay }}
-        className="flex flex-col items-center justify-center p-8 bg-white/40 backdrop-blur-md border border-white/50 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 text-center"
+        className="flex flex-col items-center justify-center p-8 bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border border-slate-200/70 dark:border-slate-800 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 text-center"
     >
-        <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600 mb-4 shadow-sm">
+        <div className="w-16 h-16 bg-yellow-100 dark:bg-yellow-950/60 rounded-full flex items-center justify-center text-yellow-600 dark:text-yellow-400 mb-4 shadow-sm">
             <Icon size={32} />
         </div>
-        <h3 className="text-xl font-bold text-slate-800">{title}</h3>
+        <h3 className="text-xl font-bold text-slate-800 dark:text-white">{title}</h3>
     </motion.div>
 );
 
@@ -37,7 +37,7 @@ const Achievements = () => {
     return (
         <Section id="achievements">
             <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
                     Achievements
                 </h2>
             </div>

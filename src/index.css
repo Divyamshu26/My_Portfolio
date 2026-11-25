@@ -4,15 +4,15 @@
 
 @layer base {
   body {
-    @apply bg-gradient-to-br from-blue-50 via-white to-purple-50 min-h-screen text-slate-800 font-sans;
+    @apply bg-[#fafaf8] dark:bg-[#0a0a0d] text-slate-800 dark:text-slate-100 min-h-screen font-sans transition-colors duration-500;
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/30 backdrop-blur-md border border-white/20 shadow-lg;
+    @apply bg-white/30 dark:bg-slate-900/40 backdrop-blur-md border border-white/20 dark:border-slate-700/40 shadow-lg;
   }
   .glass-card {
-    @apply bg-white/40 backdrop-blur-lg border border-white/30 shadow-xl rounded-2xl;
+    @apply bg-white/40 dark:bg-slate-900/50 backdrop-blur-lg border border-white/30 dark:border-slate-700/50 shadow-xl rounded-2xl;
   }
 }

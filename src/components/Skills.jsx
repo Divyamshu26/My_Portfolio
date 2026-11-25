@@ -9,18 +9,18 @@ const SkillCard = ({ title, skills, icon: Icon, delay }) => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay }}
-        className="bg-white/40 backdrop-blur-md border border-white/50 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
+        className="bg-white/60 dark:bg-slate-900/60 backdrop-blur-md border border-slate-200/70 dark:border-slate-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
     >
         <div>
-            <div className="w-12 h-12 bg-blue-100/80 rounded-xl flex items-center justify-center text-blue-600 mb-4 shadow-sm">
+            <div className="w-12 h-12 bg-blue-100/80 dark:bg-blue-950/70 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400 mb-4 shadow-sm">
                 <Icon size={24} />
             </div>
-            <h3 className="text-xl font-bold text-slate-800 mb-3">{title}</h3>
+            <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-3">{title}</h3>
             <div className="flex flex-wrap gap-2">
                 {skills.map((skill) => (
                     <span
                         key={skill}
-                        className="px-3 py-1 bg-white/70 border border-white/60 rounded-lg text-sm text-slate-600 font-medium shadow-xs hover:border-blue-300 hover:text-blue-700 hover:bg-white transition-colors"
+                        className="px-3 py-1 bg-white/80 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/70 rounded-lg text-sm text-slate-600 dark:text-slate-300 font-medium shadow-xs hover:border-blue-300 dark:hover:border-blue-500/50 hover:text-blue-700 dark:hover:text-blue-300 hover:bg-white dark:hover:bg-slate-800 transition-colors"
                     >
                         {skill}
                     </span>
@@ -77,10 +77,10 @@ const Skills = () => {
     return (
         <Section id="skills">
             <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
                     Technical Skills
                 </h2>
-                <p className="text-slate-600 max-w-2xl mx-auto">
+                <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
                     A comprehensive toolkit of languages, data engineering pipelines, AI/ML models, and frameworks I use to build scalable solutions.
                 </p>
             </div>
